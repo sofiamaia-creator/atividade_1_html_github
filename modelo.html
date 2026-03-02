@@ -1,21 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-  <!--AVISA QUE É EM PORTUGUÊS-->
   <head>
-    <!--INFORMAÇÕES DO SITE-->
     <meta charset="utf-8" />
-    <!--DIZ QUE O SITE CONTÉM OS CARACTERES QUE USAMOS NO BRASIL-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Site do Batman</title>
-    <!--FALA O TÍTULO DO SITE-->
 
     <style>
-      /*AQUI É O CSS*/
+      /* RESET E CONFIGURAÇÃO BASE */
       * /*O ASTERISCO SELECIONA TUDO*/ {
-        box-sizing: border-box; /*ELE DIVIDE OS PIXELS QUE EU COLOCAR ENTRE CONTEÚDO, PADDING E BORDA*/
+        box-sizing: border-box; /*ELE DIVIDE OS PIXELS ENTRE CONTEÚDO, PADDING E BORDA*/
       }
 
-      body {
-        /*BODY É O CONTEÚDO VISÍVEL DO SITE*/
+      body { /*BODY É O CONTEÚDO VISÍVEL DO SITE*/
         margin: 0; /*REMOVE MARGENS PADRÃO*/
         color: aliceblue; /*DEFINE COR DO TEXTO*/
         background-color: black; /*COR DE FUNDO DO SITE*/
@@ -25,18 +21,73 @@
         /*sans-serif → se nada das anteriores, usa fonte sem serifa (sem traços extras)*/
         line-height: 1.5; /*ESPAÇAMENTO DAS LINHAS*/
       }
+
+      /*CONTAINER PRINCIPAL*/
+      .container {
+        width: 900px; /*LARGURA FIXA DA PÁGINA*/
+        margin: 0 auto; /*CENTRA NA PÁGINA*/
+        padding: 16px; /*ESPAÇO INTERNO*/
+      }
+
+      /*ESTILO DAS CAIXAS (HEADER, SECTIONS, FOOTER)*/
+      .box {
+        background: rgba(0, 0, 0, 0.75); /*FUNDO SEMI-TRANSPARENTE*/
+        border: 1px solid rgba(240, 240, 255, 0.3); /*BORDAS LEVES (solid é contínua, e não pontilhada por ex)*/
+        border-radius: 12px; /*CANTOS ARREDONDADOS*/
+        padding: 14px; /*ESPAÇO INTERNO DAS CAIXAS*/
+        margin-bottom: 12px; /*DISTÂNCIA ENTRE AS CAIXAS*/
+      }
+
+      /*TÍTULOS H1 E H2*/
+      h1, h2 {
+        color: rgb(255, 211, 0); /*AMARELO DO BATMAN*/
+        margin: 0 0 8px; /*MARGEM INFERIOR*/
+      }
+
+      /*PARÁGRAFOS DENTRO DO HEADER (header é a introdução do site)*/
+      .header-interno p {
+        margin: 0; /*REMOVE MARGENS PADRÃO*/
+        color: #d1d5db; /*COR DO TEXTO DO HEADER*/
+      }
+
+      /*PARÁGRAFOS NORMAIS*/
+      p {
+        color: aqua; /*COR DO TEXTO DO SITE*/
+      }
+
+      /*SEÇÃO DE APRESENTAÇÃO*/
+      #apresentacao {
+        border-left: 8px solid rgb(255, 221, 0); /*LINHA AMARELA NA ESQUERDA*/
+      }
+
+      /*MENU DE NAVEGAÇÃO*/
+      .nav {
+        list-style: none; /*REMOVE BOLINHAS*/
+        margin: 0;
+        padding: 0;
+        display: flex; /*MENU EM LINHA*/
+        gap: 10px; /*ESPAÇO ENTRE ITENS*/
+        flex-wrap: nowrap; /*NÃO QUEBRA LINHA*/
+      }
+
+      /*LINKS DO MENU*/
+      .nav-link {
+        display: inline-block;
+        text-decoration: none; /*REMOVE SUBLINHADO*/
+        color: black; /*COR DO TEXTO*/
+        background: rgb(255, 221, 0); /*FUNDO AMARELO*/
+        padding: 8px 10px; /*ESPAÇO INTERNO DO LINK*/
+        border-radius: 10px; /*CANTOS ARREDONDADOS*/
+        font-weight: 700; /*TEXTO NEGRITO*/
+      }
     </style>
   </head>
 
   <body id="topo">
-    <!-- BODY É O CONTEÚDO VISÍVEL DO SITE-->
+    <!-- TODO 01: HEADER com H1 (título) e P (subtítulo) -->
     <div class="container" id="pagina">
-      <!-- CLASS É PRA COISAS QUE VÃO REPETIR E ID É PRA AS QUE NÃO VÃO-->
-
       <header class="box" id="cabecalho">
-        <!--HEADER É PRA PARTES INTRODUTÓRIAS DO SITE, COMO MENU DE NAVEGAÇÃO-->
         <div class="header-interno">
-          <!--DIV É TIPO UMA CAIXA QUE ORGANIZA-->
           <h1 class="titulo">Site do Batman</h1>
           <p>
             Bem-vindo a Gotham City: <strong>vigilância</strong>,
@@ -45,15 +96,13 @@
         </div>
       </header>
 
+      <!-- MENU DE NAVEGAÇÃO -->
       <nav class="box" id="menu">
-        <!--NAV É PRO MENU DE NAVEGAÇÃO-->
         <div class="nav-interno">
           <ul class="nav">
-            <!--UL É PRA CRIAR LISTA COM BOLINHAS-->
             <li class="nav-item">
               <a class="nav-link" href="#apresentacao">Gotham</a>
             </li>
-            <!--CADA LI VAI UM ELEMENTO DA LISTA-->
             <li class="nav-item">
               <a class="nav-link" href="#galeria">Galeria</a>
             </li>
@@ -64,10 +113,9 @@
         </div>
       </nav>
 
-      <main>
-        <!--MAIN É PRO CONTEÚDO PRINCIPAL DO SITE-->
-        <section class="box-panel" id="apresentacao">
-          <!--SECTION É PRA SEPARAR SEÇÕES DO SITE-->
+      <!-- CONTEÚDO PRINCIPAL -->
+      <main id="conteudo">
+        <section class="box" id="apresentacao">
           <h2>Quem é o Batman?</h2>
           <p>
             Batman (Bruce Wayne) é um personagem da DC Comics que atua como
@@ -75,13 +123,14 @@
             <strong>treinamento</strong>, <em>inteligência</em> e recursos (ou
             seja, rico).
           </p>
+
           <p>
             Nas histórias, Gotham costuma representar problemas sociais reais:
-            desigualdade, corrupção e violência urbana. Muitos quadrinhos usam o
-            Batman como forma de <strong>crítica social</strong>, mostrando como
-            decisões políticas, interesses econômicos, falhas nas instituições e
-            o autoritarismo afetam o cotidiano das pessoas, especialmente nas
-            periferias.
+            desigualdade, corrupção e violência urbana. Muitos quadrinhos usam
+            o Batman como forma de <strong>crítica social</strong>, mostrando
+            como decisões políticas, interesses econômicos, falhas nas
+            instituições e o autoritarismo afetam o cotidiano das pessoas,
+            especialmente nas periferias.
           </p>
         </section>
 
@@ -105,7 +154,7 @@
             <img
               class="bat-img"
               src="brinquedo.webp"
-              alt="Batman brinquedo"
+              alt="Brinquedo batman"
               width="220"
               height="120"
             />
@@ -113,11 +162,10 @@
         </section>
       </main>
 
+      <!-- RODAPÉ -->
       <footer class="box" id="rodape">
-        <!--FOOTER É PRO RODAPÉ-->
         <p class="texto-rodape">
-          <a class="link" href="#topo">Topo</a>
-          <!--LINK PRA VOLTAR AO TOPO DA PÁGINA-->
+          <a class="link" href="#topo">Topo</a> <!--LINK PRA VOLTAR AO TOPO DA PÁGINA-->
         </p>
         <p class="texto-rodape">Exemplo para treino de HTML e CSS.</p>
       </footer>
