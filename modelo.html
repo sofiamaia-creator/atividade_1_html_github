@@ -11,7 +11,8 @@
         box-sizing: border-box; /*ELE DIVIDE OS PIXELS ENTRE CONTEÚDO, PADDING E BORDA*/
       }
 
-      body { /*BODY É O CONTEÚDO VISÍVEL DO SITE*/
+      body {
+        /*BODY É O CONTEÚDO VISÍVEL DO SITE*/
         margin: 0; /*REMOVE MARGENS PADRÃO*/
         color: aliceblue; /*DEFINE COR DO TEXTO*/
         background-color: black; /*COR DE FUNDO DO SITE*/
@@ -39,7 +40,8 @@
       }
 
       /*TÍTULOS H1 E H2*/
-      h1, h2 {
+      h1,
+      h2 {
         color: rgb(255, 211, 0); /*AMARELO DO BATMAN*/
         margin: 0 0 8px; /*MARGEM INFERIOR*/
       }
@@ -72,7 +74,7 @@
 
       /*LINKS DO MENU*/
       .nav-link {
-        display: inline-block;
+        display: inline-block; /*INLINE COLOCA O ELEMETO PARA SEGUIR NA LINHA COM OS OUTROS ANTERIORES E O INLINE BLOCK ADAPTA O REDOR*/
         text-decoration: none; /*REMOVE SUBLINHADO*/
         color: black; /*COR DO TEXTO*/
         background: rgb(255, 221, 0); /*FUNDO AMARELO*/
@@ -80,6 +82,39 @@
         border-radius: 10px; /*CANTOS ARREDONDADOS*/
         font-weight: 700; /*TEXTO NEGRITO*/
       }
+
+      .nav-link:hover { /*O HOVER FAZ COM QUE TROQUE AS CORES DOS LINKS QUANDO PASSAR O MOUSE POR CIMA*/
+        background: rgb(225, 200, 0);
+      }
+
+      .gallery{
+        width: 920 px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: nowrap; /*NÃO QUEBRA LINHA*/
+      }
+
+      .bat-img{
+        width: 220px;
+        height: 120px;
+        border: 2px solid aliceblue;
+        border-radius: 10px;
+      }
+
+      footer p {
+        color: rgb(233, 21, 187);
+        margin: 6px, 0 0;
+      }
+
+      .link{
+        color: rgb(255, 221, 0);
+        text-decoration: none;
+      }
+
+      .link:hover{
+        text-decoration: underline;
+      }
+
     </style>
   </head>
 
@@ -126,11 +161,11 @@
 
           <p>
             Nas histórias, Gotham costuma representar problemas sociais reais:
-            desigualdade, corrupção e violência urbana. Muitos quadrinhos usam
-            o Batman como forma de <strong>crítica social</strong>, mostrando
-            como decisões políticas, interesses econômicos, falhas nas
-            instituições e o autoritarismo afetam o cotidiano das pessoas,
-            especialmente nas periferias.
+            desigualdade, corrupção e violência urbana. Muitos quadrinhos usam o
+            Batman como forma de <strong>crítica social</strong>, mostrando como
+            decisões políticas, interesses econômicos, falhas nas instituições e
+            o autoritarismo afetam o cotidiano das pessoas, especialmente nas
+            periferias.
           </p>
         </section>
 
@@ -141,22 +176,19 @@
               class="bat-img"
               src="batmancrianca.webp"
               alt="Batman criança"
-              width="220"
-              height="120"
+              
             />
             <img
               class="bat-img"
               src="batmann.jpg"
               alt="Batman"
-              width="220"
-              height="120"
+             
             />
             <img
               class="bat-img"
               src="brinquedo.webp"
               alt="Brinquedo batman"
-              width="220"
-              height="120"
+              
             />
           </div>
         </section>
@@ -165,7 +197,8 @@
       <!-- RODAPÉ -->
       <footer class="box" id="rodape">
         <p class="texto-rodape">
-          <a class="link" href="#topo">Topo</a> <!--LINK PRA VOLTAR AO TOPO DA PÁGINA-->
+          <a class="link" href="#topo">Topo</a>
+          <!--LINK PRA VOLTAR AO TOPO DA PÁGINA-->
         </p>
         <p class="texto-rodape">Exemplo para treino de HTML e CSS.</p>
       </footer>
